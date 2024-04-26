@@ -33,6 +33,6 @@ for file in pathlib.Path(EXTRACT_PATH).iterdir():
 
 shutil.rmtree(EXTRACT_PATH)
 
-output = open(OUTPUT_PATH, "w")
-output.write(json.dumps(notes, indent=4))
-output.close()
+with open(OUTPUT_PATH, "w") as output:
+    # ensure_ascii=False to avoid \uHHHH characters, e.g. for emojis
+    json.dump(notes, output, indent=4, ensure_ascii=False)
