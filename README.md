@@ -1,4 +1,5 @@
 # Notesnook to JSON
+> also see [json-to-notesnook](https://github.com/julius-boettger/json-to-notesnook)
 
 Takes a `.zip` of your exported Notesnook notes as the input and outputs a JSON file containing all your notes like
 ```json
