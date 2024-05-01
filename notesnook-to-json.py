@@ -32,6 +32,9 @@ for file in pathlib.Path(EXTRACT_PATH).iterdir():
 
 shutil.rmtree(EXTRACT_PATH)
 
+# case sensitive sort
+notes.sort(key=lambda note: note["title"])
+
 with open(OUTPUT_PATH, "w") as output:
     # ensure_ascii=False to avoid \uHHHH characters, e.g. for emojis
     json.dump(notes, output, indent=4, ensure_ascii=False)
