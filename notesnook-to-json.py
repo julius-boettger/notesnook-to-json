@@ -38,3 +38,5 @@ notes.sort(key=lambda note: note["title"])
 with open(OUTPUT_PATH, "w") as output:
     # ensure_ascii=False to avoid \uHHHH characters, e.g. for emojis
     json.dump(notes, output, indent=4, ensure_ascii=False)
+
+print(f"processed {len(notes)} notes.")
