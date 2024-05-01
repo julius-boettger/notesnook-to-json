@@ -18,10 +18,9 @@ def extract_title(filecontent: str) -> str:
     return filecontent.split("\n", 1)[0]
 
 def extract_content(filecontent: str) -> str:
-    delimiter = "----------"
-    start = filecontent.index(delimiter)
-    end = filecontent.rindex(delimiter)
-    return filecontent[(start + len(delimiter)) : end].strip()
+    delimiter = "\n\n  "
+    start = filecontent.index(delimiter) + len(delimiter)
+    return filecontent[start:].strip()
 
 notes = []
 for file in pathlib.Path(EXTRACT_PATH).iterdir():
